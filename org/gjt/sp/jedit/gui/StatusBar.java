@@ -354,7 +354,8 @@ public class StatusBar extends JPanel
 
 			int caretPosition = textArea.getCaretPosition();
 			int currLine = textArea.getCaretLine();
-
+			int wordCount = textArea.getWordCount(view,buffer.getText(0,buffer.getLength()));
+			int currWord = textArea.getWordCount(view,buffer.getText(0,caretPosition));
 			// there must be a better way of fixing this...
 			// the problem is that this method can sometimes
 			// be called as a result of a text area scroll
@@ -381,7 +382,6 @@ public class StatusBar extends JPanel
 			if (jEdit.getBooleanProperty("view.status.show-caret-linenumber", true))
 			{
 				buf.append(currLine + 1);
-				buf.append(',');
 			}
 			if (jEdit.getBooleanProperty("view.status.show-caret-dot", true))
 			{
@@ -418,6 +418,12 @@ public class StatusBar extends JPanel
 				buf.append(bufferLength);
 				buf.append(')');
 			}
+
+			buf.append('(');
+			buf.append(currWord);
+			buf.append('/');
+			buf.append(wordCount);
+			buf.append(')');
 
 			caretStatus.setText(buf.toString());
 			buf.setLength(0);
