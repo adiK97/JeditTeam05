@@ -116,7 +116,7 @@ public class RecentFilesProvider implements DynamicMenuProvider
 					for (JMenuItem recent : menuItems)
 					{
 						recent.setEnabled(filter ?
-							pattern.matcher(recent.getText()).matches() : true);
+							pattern.matcher(recent.getText()).find() : true);
 					}
 				}
 				catch(PatternSyntaxException re)
