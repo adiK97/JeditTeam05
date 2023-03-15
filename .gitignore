@@ -1,5 +1,8 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
 build
 out
-jEdit.iml
 jEdit.iml
 .idea/misc.xml

@@ -377,6 +377,9 @@ public class JEditTextArea extends TextArea
 		GUIUtilities.message(view,"wordcount",args);
 	} //}}}
 
+	/*
+	Returns the total word count for a view, for given text selection.
+	 */
 	public static int getWordCount(View view, String text){
 		char[] chars = text.toCharArray();
 		int words = 0;

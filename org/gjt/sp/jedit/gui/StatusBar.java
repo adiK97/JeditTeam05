@@ -354,7 +354,11 @@ public class StatusBar extends JPanel
 
 			int caretPosition = textArea.getCaretPosition();
 			int currLine = textArea.getCaretLine();
+
+			//Get total word count
 			int wordCount = textArea.getWordCount(view,buffer.getText(0,buffer.getLength()));
+
+			//Get current word position. Used caret position to calculate.
 			int currWord = textArea.getWordCount(view,buffer.getText(0,caretPosition));
 			// there must be a better way of fixing this...
 			// the problem is that this method can sometimes
@@ -418,7 +422,7 @@ public class StatusBar extends JPanel
 				buf.append(bufferLength);
 				buf.append(')');
 			}
-
+			// Appends word count to the status bar
 			buf.append('(');
 			buf.append(currWord);
 			buf.append('/');
