@@ -364,8 +364,25 @@ public class JEditTextArea extends TextArea
 	{
 		char[] chars = text.toCharArray();
 		int characters = chars.length;
-		int words = 0;
+		int words = getWordCount(view, text);
 		int lines = 1;
+
+		for (char aChar : chars){
+
+			if (aChar == '\n'){
+				lines++;
+			}
+		}
+		Object[] args = { characters, words, lines };
+		GUIUtilities.message(view,"wordcount",args);
+	} //}}}
+
+	/*
+	Returns the total word count for a view, for given text selection.
+	 */
+	public static int getWordCount(View view, String text){
+		char[] chars = text.toCharArray();
+		int words = 0;
 
 		boolean word = true;
 		for (char aChar : chars)
@@ -374,7 +391,6 @@ public class JEditTextArea extends TextArea
 			{
 				case '\r':
 				case '\n':
-					lines++;
 				case ' ':
 				case '\t':
 					word = true;
@@ -388,10 +404,10 @@ public class JEditTextArea extends TextArea
 					break;
 			}
 		}
+		return words;
 
-		Object[] args = { characters, words, lines };
-		GUIUtilities.message(view,"wordcount",args);
-	} //}}}
+	}
+
 
 	//{{{ showWordCountDialog() method
 	/**
