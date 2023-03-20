@@ -386,6 +386,7 @@ public class StatusBar extends JPanel
 			if (jEdit.getBooleanProperty("view.status.show-caret-linenumber", true))
 			{
 				buf.append(currLine + 1);
+				buf.append(',');
 			}
 			if (jEdit.getBooleanProperty("view.status.show-caret-dot", true))
 			{
