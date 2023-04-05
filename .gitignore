@@ -1,2 +1,8 @@
 build
 out
+/.metadata/
+/.scannerwork/
+/.settings/
+codemr
+/.sonar/
+/.idea/
