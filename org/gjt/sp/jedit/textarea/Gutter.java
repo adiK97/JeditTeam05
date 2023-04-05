@@ -160,6 +160,10 @@ public class Gutter extends JComponent implements SwingConstants
 			gfx.fillRect(clip.x + FOLD_MARKER_SIZE, clip.y,
 				clip.width - FOLD_MARKER_SIZE, clip.height);
 		}
+		// commenting a trial push for github sonar pipeline!
+		while (1 == 0){
+			int a = 1;
+		}
 		// if buffer is loading, don't paint anything
 		if (textArea.getBuffer().isLoading())
 			return;
