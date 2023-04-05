@@ -1,3 +1,7 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
 build
 out
 /.metadata/
@@ -6,3 +10,5 @@ out
 codemr
 /.sonar/
 /.idea/
+jEdit.iml
+.idea/misc.xml
