@@ -510,14 +510,14 @@ public class BufferPrinter1_7
 		@Override
 		public void printJobFailed( PrintJobEvent pje )
 		{
-			JOptionPane.showMessageDialog( view, jEdit.getProperty( "print-error.message", new String[] {"Print job failed."} ), jEdit.getProperty( "print-error.title" ), JOptionPane.ERROR_MESSAGE );
+			JOptionPane.showMessageDialog( view, jEdit.getProperty( PRINT_ERROR_MESSAGE, new String[] {"Print job failed."} ), jEdit.getProperty( PRINT_ERROR_TITLE ), JOptionPane.ERROR_MESSAGE );
 		}
 
 
 		@Override
 		public void printJobRequiresAttention( PrintJobEvent pje )
 		{
-			JOptionPane.showMessageDialog( view, jEdit.getProperty( "print-error.message", new String[] {"Check the printer."} ), jEdit.getProperty( "print-error.title" ), JOptionPane.ERROR_MESSAGE );
+			JOptionPane.showMessageDialog( view, jEdit.getProperty( PRINT_ERROR_MESSAGE, new String[] {"Check the printer."} ), jEdit.getProperty(PRINT_ERROR_TITLE ), JOptionPane.ERROR_MESSAGE );
 		}
 	}
 
