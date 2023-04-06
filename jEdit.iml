@@ -21,7 +21,7 @@
     <orderEntry type="library" scope="TEST" name="Test Dependencies" level="project" />
     <orderEntry type="library" name="Compile Dependencies" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Runtime Dependencies" level="project" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://F:/MS CS/Spring 2023/CS 6356/Assign 2/jsr305-3.0.2.jar!/" />
