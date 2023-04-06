@@ -44,22 +44,21 @@ import org.gjt.sp.util.Log;
 public class BeanShellAction extends EditAction
 {
 	//{{{ BeanShellAction constructor
-	public BeanShellAction(String name, String code, String isSelected,
-		boolean noRepeat, boolean noRecord, boolean noRememberLast)
+	public BeanShellAction(BeanShellActionBuilder beanshellObject)
 	{
-		super(name);
+		super(beanshellObject.getName());
 
 		/* Some characters that we like to use in action names
 		 * ('.', '-') are not allowed in BeanShell identifiers. */
 		String sanitizedName = name.replace('.','_').replace('-','_');
-		this.code = new CachedBshMethod("action_" + sanitizedName, code);
+		this.code = new CachedBshMethod("action_" + sanitizedName, beanshellObject.getCode());
 		if (isSelected != null)
 		{
-			this.isSelected = new CachedBshMethod("selected_" + sanitizedName, isSelected);
+			this.isSelected = new CachedBshMethod("selected_" + sanitizedName, beanshellObject.getIsSelected());
 		}
-		this.noRepeat = noRepeat;
-		this.noRecord = noRecord;
-		this.noRememberLast = noRememberLast;
+		this.noRepeat = beanshellObject.getIsNoRepeat();
+		this.noRecord = beanshellObject.getIsNoRecord();
+		this.noRememberLast = beanshellObject.getIsNoRememberLast();
 
 		jEdit.setTemporaryProperty(name + ".toggle",
 			isSelected != null ? "true" : "false");

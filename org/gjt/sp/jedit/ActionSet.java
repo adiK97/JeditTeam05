@@ -323,7 +323,14 @@ public class ActionSet extends JEditActionSet<EditAction> implements Comparable
 						    boolean noRecord,
 						    boolean noRememberLast)
 	{
-		return new BeanShellAction(actionName,code,selected,noRepeat,noRecord,noRememberLast);
+		BeanShellActionBuilder beanShellObject = new BeanShellActionBuilder();
+		beanShellObject.setName(actionName);
+		beanShellObject.setCode(code);
+		beanShellObject.setIsSelected(selected);
+		beanShellObject.setNoRecord(noRecord);
+		beanShellObject.setNoRepeat(noRepeat);
+		beanShellObject.setNoRememberLast(noRememberLast);
+		return new BeanShellAction(beanShellObject);
 	}
 	//}}}
 
